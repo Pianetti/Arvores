@@ -1,0 +1,17 @@
+# Build directories and outputs
+build/
+bin/
+*.o
+*.obj
+*.exe
+*.out
+
+# Relatório técnico (mantido localmente fora do repositório)
+relatorio/
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*~
