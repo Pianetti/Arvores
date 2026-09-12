@@ -15,3 +15,6 @@ relatorio/
 .DS_Store
 *.swp
 *~
+
+# Arquivos de visualização temporários
+*.dot
