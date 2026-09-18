@@ -1,0 +1,6 @@
+<svg width="700" height="350" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#F8FAFC" rx="10" />
+  <text x="350.0" y="36" font-family="Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#0F172A" text-anchor="middle">Trie - Estado 2: Compartilhamento de Prefixos Estendido</text>
+  <circle cx="350.0" cy="70" r="24" fill="#F8FAFC" stroke="#334155" stroke-width="2.5" />
+  <text x="350.0" y="74" font-family="Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#0F172A" text-anchor="middle">node</text>
+</svg>

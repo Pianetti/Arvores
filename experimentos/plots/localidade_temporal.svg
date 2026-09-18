@@ -1,0 +1,33 @@
+<svg width="600" height="380" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#FFFFFF" rx="8" />
+  <text x="300.0" y="28" font-family="Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1E293B" text-anchor="middle">Impacto da Localidade Temporal: Splay vs. Treap (100k Consultas)</text>
+  <line x1="75" y1="330.0" x2="570" y2="330.0" stroke="#E2E8F0" stroke-width="1" />
+  <text x="65" y="334.0" font-family="Helvetica, sans-serif" font-size="11" fill="#64748B" text-anchor="end">0.0</text>
+  <line x1="75" y1="274.0" x2="570" y2="274.0" stroke="#E2E8F0" stroke-width="1" />
+  <text x="65" y="278.0" font-family="Helvetica, sans-serif" font-size="11" fill="#64748B" text-anchor="end">8.6</text>
+  <line x1="75" y1="218.0" x2="570" y2="218.0" stroke="#E2E8F0" stroke-width="1" />
+  <text x="65" y="222.0" font-family="Helvetica, sans-serif" font-size="11" fill="#64748B" text-anchor="end">17.2</text>
+  <line x1="75" y1="162.0" x2="570" y2="162.0" stroke="#E2E8F0" stroke-width="1" />
+  <text x="65" y="166.0" font-family="Helvetica, sans-serif" font-size="11" fill="#64748B" text-anchor="end">25.8</text>
+  <line x1="75" y1="106.0" x2="570" y2="106.0" stroke="#E2E8F0" stroke-width="1" />
+  <text x="65" y="110.0" font-family="Helvetica, sans-serif" font-size="11" fill="#64748B" text-anchor="end">34.3</text>
+  <line x1="75" y1="50.0" x2="570" y2="50.0" stroke="#E2E8F0" stroke-width="1" />
+  <text x="65" y="54.0" font-family="Helvetica, sans-serif" font-size="11" fill="#64748B" text-anchor="end">42.9</text>
+  <line x1="75" y1="330" x2="570" y2="330" stroke="#475569" stroke-width="1.5" />
+  <line x1="75" y1="50" x2="75" y2="330" stroke="#475569" stroke-width="1.5" />
+  <text x="18" y="190.0" font-family="Helvetica, sans-serif" font-size="12" fill="#334155" text-anchor="middle" transform="rotate(-90 18 190.0)">Tempo Total de Busca (ms)</text>
+  <text x="198.75" y="350" font-family="Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#334155" text-anchor="middle">Uniforme</text>
+  <rect x="124.5" y="86.52173913043475" width="70.25" height="243.47826086956525" fill="#8B5CF6" rx="3" />
+  <text x="159.625" y="80.52173913043475" font-family="Helvetica, sans-serif" font-size="10" fill="#1E293B" text-anchor="middle">37.3</text>
+  <rect x="198.75" y="249.77602595169049" width="70.25" height="80.2239740483095" fill="#10B981" rx="3" />
+  <text x="233.875" y="243.77602595169049" font-family="Helvetica, sans-serif" font-size="10" fill="#1E293B" text-anchor="middle">12.3</text>
+  <text x="446.25" y="350" font-family="Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#334155" text-anchor="middle">Zipfiano (80-20)</text>
+  <rect x="372.0" y="253.94508936153557" width="70.25" height="76.05491063846443" fill="#8B5CF6" rx="3" />
+  <text x="407.125" y="247.94508936153557" font-family="Helvetica, sans-serif" font-size="10" fill="#1E293B" text-anchor="middle">11.7</text>
+  <rect x="446.25" y="293.1494847846705" width="70.25" height="36.85051521532947" fill="#10B981" rx="3" />
+  <text x="481.375" y="287.1494847846705" font-family="Helvetica, sans-serif" font-size="10" fill="#1E293B" text-anchor="middle">5.6</text>
+  <rect x="90" y="57" width="14" height="14" fill="#8B5CF6" rx="2" />
+  <text x="110" y="68" font-family="Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#334155">Splay Tree</text>
+  <rect x="230" y="57" width="14" height="14" fill="#10B981" rx="2" />
+  <text x="250" y="68" font-family="Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#334155">Treap</text>
+</svg>
