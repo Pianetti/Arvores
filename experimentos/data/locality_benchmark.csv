@@ -1,5 +1,5 @@
 padrao_acesso,num_consultas,estrutura,tempo_busca_ms,rotacoes,comparacoes
-Uniforme,100000,Splay,37.3242,1620481,1720481
-Uniforme,100000,Treap,12.298,0,1605106
-Zipfiano (80-20),100000,Splay,11.6589,643856,743856
-Zipfiano (80-20),100000,Treap,5.64903,0,1704262
+Uniforme,100000,Splay,37.899,1620481,1720481
+Uniforme,100000,Treap,14.4352,0,1605106
+Zipfiano (80-20),100000,Splay,13.267,643856,743856
+Zipfiano (80-20),100000,Treap,6.10535,0,1704262
