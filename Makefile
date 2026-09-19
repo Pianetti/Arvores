@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -O3 -Wall -Wextra -Icommon/include -Itrie/include -Ipatricia/include -Isplay/include -Itreap/include -Ikdtree/include
+CXXFLAGS = -std=c++17 -O3 -Wall -Wextra -Icommon/include -Itrie/include -Ipatricia/include -Isplay/include -Itreap/include -Ikdtree/include -Ibst/include -Iavl/include
 
 BIN_DIR = bin
 
@@ -23,10 +23,10 @@ treap: $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) treap/src/treap.cpp treap/src/main_treap.cpp -o $(BIN_DIR)/treap_demo
 
 kdtree: $(BIN_DIR)
-	$(CXX) $(CXXFLAGS) kdtree/src/kdtree.cpp kdtree/src/main_kdtree.cpp -o $(BIN_DIR)/kdtree_demo
+	$(CXX) $(CXXFLAGS) kdtree/src/kdtree.cpp bst/src/bst.cpp avl/src/avl.cpp kdtree/src/main_kdtree.cpp -o $(BIN_DIR)/kdtree_demo
 
 experimentos: $(BIN_DIR)
-	$(CXX) $(CXXFLAGS) experimentos/src/benchmark_runner.cpp trie/src/trie.cpp patricia/src/patricia.cpp splay/src/splay_tree.cpp treap/src/treap.cpp kdtree/src/kdtree.cpp $(COMMON_SRC) -o $(BIN_DIR)/benchmark
+	$(CXX) $(CXXFLAGS) experimentos/src/benchmark_runner.cpp trie/src/trie.cpp patricia/src/patricia.cpp splay/src/splay_tree.cpp treap/src/treap.cpp kdtree/src/kdtree.cpp bst/src/bst.cpp avl/src/avl.cpp $(COMMON_SRC) -o $(BIN_DIR)/benchmark
 
 clean:
 	rm -rf $(BIN_DIR) build *.dot *.svg

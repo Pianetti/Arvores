@@ -9,6 +9,8 @@
 #include "trie.hpp"
 #include "patricia.hpp"
 #include "splay_tree.hpp"
+#include "bst.hpp"
+#include "avl.hpp"
 #include "treap.hpp"
 #include "kdtree.hpp"
 
@@ -161,6 +163,55 @@ void runSplayVsTreap() {
                           << " | Treap -> Ins: " << std::setw(7) << insTime << "ms | Busca: " 
                           << std::setw(7) << searchTime << "ms | Rot: " << std::setw(9) << treap.getMetrics().rotations << "\n";
             }
+            // Benchmark BST
+            {
+                BST bst;
+                Timer t;
+                for (int x : data) {
+                    bst.insert(x);
+                }
+                double insTime = t.elapsed_milliseconds();
+
+                t.reset();
+                for (int x : data) {
+                    bst.search(x);
+                }
+                double searchTime = t.elapsed_milliseconds();
+
+                csv << dist << "," << N << ",BST,"
+                    << insTime << "," << searchTime << ",0,"
+                    << bst.getMetrics().comparisons << "\n";
+
+                std::cout << "[" << std::setw(9) << dist << "] N=" << std::setw(5) << N 
+                          << " | BST   -> Ins: " << std::setw(7) << insTime << "ms | Busca: " 
+                          << std::setw(7) << searchTime << "ms | Comp: " << std::setw(9) << bst.getMetrics().comparisons << "\n";
+            }
+
+            // Benchmark AVL
+            {
+                AVL avl;
+                Timer t;
+                for (int x : data) {
+                    avl.insert(x);
+                }
+                double insTime = t.elapsed_milliseconds();
+
+                t.reset();
+                for (int x : data) {
+                    avl.search(x);
+                }
+                double searchTime = t.elapsed_milliseconds();
+
+                csv << dist << "," << N << ",AVL,"
+                    << insTime << "," << searchTime << ","
+                    << avl.getMetrics().rotations << ","
+                    << avl.getMetrics().comparisons << "\n";
+
+                std::cout << "[" << std::setw(9) << dist << "] N=" << std::setw(5) << N 
+                          << " | AVL   -> Ins: " << std::setw(7) << insTime << "ms | Busca: " 
+                          << std::setw(7) << searchTime << "ms | Rot: " << std::setw(9) << avl.getMetrics().rotations << "\n";
+            }
+
         }
     }
     csv.close();
@@ -246,6 +297,48 @@ void runLocalityBenchmark() {
                       << std::setw(8) << timeMs << "ms | Rot: " << std::setw(8) << treap.getMetrics().rotations 
                       << " | Comp: " << treap.getMetrics().comparisons << "\n";
         }
+        // BST
+        {
+            BST bst;
+            for (int k : keys) bst.insert(k);
+            bst.resetMetrics();
+
+            Timer t;
+            for (int q : queries) {
+                bst.search(q);
+            }
+            double timeMs = t.elapsed_milliseconds();
+
+            csv << name << "," << Q << ",BST,"
+                << timeMs << ",0,"
+                << bst.getMetrics().comparisons << "\n";
+
+            std::cout << "[" << std::setw(16) << name << "] BST   -> Tempo: " 
+                      << std::setw(8) << timeMs << "ms | Rot: " << std::setw(8) << 0 
+                      << " | Comp: " << bst.getMetrics().comparisons << "\n";
+        }
+
+        // AVL
+        {
+            AVL avl;
+            for (int k : keys) avl.insert(k);
+            avl.resetMetrics();
+
+            Timer t;
+            for (int q : queries) {
+                avl.search(q);
+            }
+            double timeMs = t.elapsed_milliseconds();
+
+            csv << name << "," << Q << ",AVL,"
+                << timeMs << "," << avl.getMetrics().rotations << ","
+                << avl.getMetrics().comparisons << "\n";
+
+            std::cout << "[" << std::setw(16) << name << "] AVL   -> Tempo: " 
+                      << std::setw(8) << timeMs << "ms | Rot: " << std::setw(8) << avl.getMetrics().rotations 
+                      << " | Comp: " << avl.getMetrics().comparisons << "\n";
+        }
+
     }
 
     csv.close();

@@ -45,7 +45,7 @@ def plot_splay_vs_treap():
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 6))
     
     df_rand = df[df['distribuicao'] == 'aleatorio']
-    for est in ['Splay', 'Treap']:
+    for est in ['Splay', 'Treap', 'BST', 'AVL']:
         sub = df_rand[df_rand['estrutura'] == est]
         ax1.plot(sub['N'], sub['tempo_insercao_ms'], marker='o', label=est)
     ax1.set_title("Tempo de Inserção - Dados Aleatórios")
@@ -55,7 +55,7 @@ def plot_splay_vs_treap():
     ax1.grid(True)
 
     df_sort = df[df['distribuicao'] == 'ordenado']
-    for est in ['Splay', 'Treap']:
+    for est in ['Splay', 'Treap', 'BST', 'AVL']:
         sub = df_sort[df_sort['estrutura'] == est]
         ax2.plot(sub['N'], sub['tempo_insercao_ms'], marker='^', label=est)
     ax2.set_title("Tempo de Inserção - Dados Ordenados")
@@ -69,10 +69,10 @@ def plot_splay_vs_treap():
 
     # 2. Rotations (Random)
     plt.figure(figsize=(10, 6))
-    for est in ['Splay', 'Treap']:
+    for est in ['Splay', 'Treap', 'BST', 'AVL']:
         sub = df_rand[df_rand['estrutura'] == est]
         plt.plot(sub['N'], sub['rotacoes'], marker='x', label=est)
-    plt.title("Splay vs Treap: Número de Rotações (Dados Aleatórios)")
+    plt.title("Número de Rotações (Dados Aleatórios)")
     plt.xlabel("Número de Elementos (N)")
     plt.ylabel("Total de Rotações")
     plt.legend()

@@ -11,7 +11,7 @@ include_directories(
     patricia/include
     splay/include
     treap/include
-    kdtree/include
+    kdtree/include\n    bst/include\n    avl/include
 )
 
 # Common utility library
@@ -38,17 +38,23 @@ add_executable(treap_demo treap/src/main_treap.cpp)
 target_link_libraries(treap_demo treap_lib)
 
 # 5. KD-Tree
-add_library(kdtree_lib kdtree/src/kdtree.cpp)
+add_library(kdtree_lib\n    bst_lib\n    avl_lib kdtree/src/kdtree.cpp)
 add_executable(kdtree_demo kdtree/src/main_kdtree.cpp)
-target_link_libraries(kdtree_demo kdtree_lib)
+target_link_libraries(kdtree_demo kdtree_lib\n    bst_lib\n    avl_lib)
 
-# Experiments/Benchmark
+
+# 6. BST
+add_library(bst_lib bst/src/bst.cpp)
+
+# 7. AVL
+add_library(avl_lib avl/src/avl.cpp)
+\n# Experiments/Benchmark
 add_executable(benchmark experimentos/src/benchmark_runner.cpp)
 target_link_libraries(benchmark
     trie_lib
     patricia_lib
     splay_lib
     treap_lib
-    kdtree_lib
+    kdtree_lib\n    bst_lib\n    avl_lib
     common_lib
 )
