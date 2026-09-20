@@ -18,3 +18,5 @@ relatorio/
 
 # Arquivos de visualização temporários
 *.dot
+# Relatório e arquivos LaTeX
+relatorio/
